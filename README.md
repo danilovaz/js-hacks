@@ -3,6 +3,27 @@
 
 ## Hacks
 
+### Concatenando strings
+
+#### bad way
+```javascript
+var result = "";
+for (var i = 0; i < 100000; i++) {
+  var user = "user: " + i + "\n";
+  result += user;
+}
+console.log(result);
+```
+
+#### right way
+```javascript
+var result = [];
+for (var i = 0; i < 100000; i++) {
+  var user = "User: " + i + "\n";
+  result.push(user);
+}
+console.log(result.join(""));
+```
 
 ## Referências de estudo
 * [udgwebdev](http://udgwebdev.com/15-javascript-hacks/)
